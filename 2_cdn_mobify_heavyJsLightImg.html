@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<script>(function(c,f){function h(a){if(a.mode){var b=g("mobify-mode");b&&a[b]||(b=a.mode(d.ua));return a[b]}return a}function m(){function a(a){c.addEventListener(a,function(){d[a]=+new Date},!1)}c.addEventListener&&(a("DOMContentLoaded"),a("load"))}function n(){var a=new Date;a.setTime(a.getTime()+3E5);f.cookie="mobify-path=; expires="+a.toGMTString()+"; path=/";c.location=c.location.href}function p(){k({src:"https://preview.mobify.com/v7/"})}function g(a){if(a=f.cookie.match(RegExp("(^|; )"+a+"((=([^;]*))|(; |$))")))return a[4]||
+""}function l(a){f.write('<plaintext style="display:none">');setTimeout(function(){e.capturing=!0;a()},0)}function k(a,b){var c=f.getElementsByTagName("script")[0],d=f.createElement("script"),e;for(e in a)d[e]=a[e];b&&d.setAttribute("class",b);c.parentNode.insertBefore(d,c)}var e=c.Mobify={},d=e.Tag={};e.points=[+new Date];e.tagVersion=[7,0];d.ua=c.navigator.userAgent;d.getOptions=h;d.init=function(a){d.options=a;if(""!==g("mobify-path"))if(m(),a.skipPreview||"true"!=g("mobify-path")&&!/mobify-path=true/.test(c.location.hash)){var b=
+h(a);if(b){var e=function(){b.post&&b.post()};a=function(){b.pre&&b.pre();k({id:"mobify-js",src:b.url,onerror:n,onload:e},"mobify")};!1===b.capture?a():l(a)}}else l(p)}})(window,document);
+var supportedBrowser=function(e){var t=/webkit|(firefox)[\/\s](\d+)|(opera)[\s\S]*version[\/\s](\d+)|(trident)[\/\s](\d+)/i.exec(e);if(!t){return false}if(t[1]&&+t[2]<4){return false}if(t[3]&&+t[4]<11){return false}if(t[5]&&+t[6]<6){return false}return true};
+if (supportedBrowser) {
+    Mobify.Tag.init({
+        url: "./mobify.min.js",
+        post: function() {
+            var capturing = window.Mobify && window.Mobify.capturing || false;
+        if (capturing) {
+            // Grab reference to a newly created document
+            Mobify.Capture.init(function(capture){
+                // Grab reference to the captured document in progres
+                var capturedDoc = capture.capturedDoc;
+
+                var imgs = capturedDoc.getElementsByTagName("img");
+                for(var i = 0; i < imgs.length; i++) {
+                    var img = imgs[i];
+                    var ogImage = img.getAttribute("src");
+                    var mobileImage = img.getAttribute("data-mobile-src");
+                    img.setAttribute("x-src", mobileImage);
+                    img.setAttribute("old-src", ogImage);
+                }
+
+                // Render source DOM to document
+                capture.renderCapturedDoc();
+            });
+        }
+            else {
+                console.log('Executing post-capture!');
+            }
+        }
+    });
+}</script>
+<title>Google</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://fb.me/react-0.13.2.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://backbonejs.org/backbone-min.js"></script>
+<script src="js/addthis_widget.js"></script>
+<script src="js/cookiemanager.js"></script>
+<script src="js/duel.js"></script>
+<script src="js/hi-res-css.js"></script>
+<script src="js/iebackground.js"></script>
+<script src="js/jq.js"></script>
+<script src="js/layers.js"></script>
+<script src="js/menu.js"></script>
+</head>
+<body>
+<h1>Heavy JavaScript, Light Images</h1>
+
+
+    <div class="img">
+	<img src="img/light1.jpg" data-mobile-src="img/light1.jpg" />
+    </div>
+    <div class="img">
+	<img src="img/light2.jpg" data-mobile-src="img/light2.jpg" />
+    </div>
+    <div class="img">
+	<img src="img/light3.jpg" data-mobile-src="img/light3.png" />
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cinzel-Regular'), url(http://fonts.gstatic.com/s/cinzel/v4/zOdksD_UUTk1LJF9z4tURA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/cinzel/v4/mLL0ZqnXRx3m16FnBy9gcg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cinzel-Bold'), url(http://fonts.gstatic.com/s/cinzel/v4/L74890HNVnUypqWjqGUt1VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/cinzel/v4/L74890HNVnUypqWjqGUt1T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
