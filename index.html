@@ -1,56 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+ Skip to content
+This repository
+
+    Explore
+    Gist
+    Blog
+    Help
+
+    @ashwintumma23 ashwintumma23
+
+1
+0
+
+    0
+
+ashwintumma23/WebPageOptimizationUsingWProf
+
+WebPageOptimizationUsingWProf/index.html
+@ashwintumma23 ashwintumma23 2 days ago
+png file
+
+1 contributor
+44 lines (34 sloc) 1.812 kb
+<!doctype html>
+<html>
 <head>
-<script>(function(c,f){function h(a){if(a.mode){var b=g("mobify-mode");b&&a[b]||(b=a.mode(d.ua));return a[b]}return a}function m(){function a(a){c.addEventListener(a,function(){d[a]=+new Date},!1)}c.addEventListener&&(a("DOMContentLoaded"),a("load"))}function n(){var a=new Date;a.setTime(a.getTime()+3E5);f.cookie="mobify-path=; expires="+a.toGMTString()+"; path=/";c.location=c.location.href}function p(){k({src:"https://preview.mobify.com/v7/"})}function g(a){if(a=f.cookie.match(RegExp("(^|; )"+a+"((=([^;]*))|(; |$))")))return a[4]||
-""}function l(a){f.write('<plaintext style="display:none">');setTimeout(function(){e.capturing=!0;a()},0)}function k(a,b){var c=f.getElementsByTagName("script")[0],d=f.createElement("script"),e;for(e in a)d[e]=a[e];b&&d.setAttribute("class",b);c.parentNode.insertBefore(d,c)}var e=c.Mobify={},d=e.Tag={};e.points=[+new Date];e.tagVersion=[7,0];d.ua=c.navigator.userAgent;d.getOptions=h;d.init=function(a){d.options=a;if(""!==g("mobify-path"))if(m(),a.skipPreview||"true"!=g("mobify-path")&&!/mobify-path=true/.test(c.location.hash)){var b=
-h(a);if(b){var e=function(){b.post&&b.post()};a=function(){b.pre&&b.pre();k({id:"mobify-js",src:b.url,onerror:n,onload:e},"mobify")};!1===b.capture?a():l(a)}}else l(p)}})(window,document);
-var supportedBrowser=function(e){var t=/webkit|(firefox)[\/\s](\d+)|(opera)[\s\S]*version[\/\s](\d+)|(trident)[\/\s](\d+)/i.exec(e);if(!t){return false}if(t[1]&&+t[2]<4){return false}if(t[3]&&+t[4]<11){return false}if(t[5]&&+t[6]<6){return false}return true};
-if (supportedBrowser) {
-    Mobify.Tag.init({
-        url: "./mobify.min.js",
-        post: function() {
-            var capturing = window.Mobify && window.Mobify.capturing || false;
-        if (capturing) {
-            // Grab reference to a newly created document
-            Mobify.Capture.init(function(capture){
-                // Grab reference to the captured document in progres
-                var capturedDoc = capture.capturedDoc;
-
-                var imgs = capturedDoc.getElementsByTagName("img");
-                for(var i = 0; i < imgs.length; i++) {
-                    var img = imgs[i];
-                    var ogImage = img.getAttribute("src");
-                    var mobileImage = img.getAttribute("data-mobile-src");
-                    img.setAttribute("x-src", mobileImage);
-                    img.setAttribute("old-src", ogImage);
-                }
-
-                // Render source DOM to document
-                capture.renderCapturedDoc();
-            });
-        }
-            else {
-                console.log('Executing post-capture!');
-            }
-        }
-    });
-}</script>
-<title>Google</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Webpage Profiling using WProf by ashwintumma23</title>
+<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+<script src="javascripts/scale.fix.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 </head>
 <body>
+<div class="wrapper">
+<header>
+<h1 class="header">Webpage Profiling using WProf</h1>
+<p class="header">Repository for storing and linking different types of Webpages</p>
+<ul>
+<li class="download"><a class="buttons" href="https://github.com/ashwintumma23/WebPageOptimizationUsingWProf/zipball/master">Download ZIP</a></li>
+<li class="download"><a class="buttons" href="https://github.com/ashwintumma23/WebPageOptimizationUsingWProf/tarball/master">Download TAR</a></li>
+<li><a class="buttons github" href="https://github.com/ashwintumma23/WebPageOptimizationUsingWProf">View On GitHub</a></li>
+</ul>
+<p class="header">This project is maintained by <a class="header name" href="https://github.com/ashwintumma23">ashwintumma23</a></p>
+</header>
 <h1>Light JavaScript, Light Images</h1>
-
-
-    <div class="img">
-	<img src="img/light1.jpg" data-mobile-src="img/light1.jpg" />
-    </div>
-    <div class="img">
-	<img src="img/light2.jpg" data-mobile-src="img/light2.jpg" />
-    </div>
-    <div class="img">
-	<img src="img/light3.png" data-mobile-src="img/light3.png" />
-    </div>
+<img src="img/light1.jpg" width="100%" height="100%" align="right"/>
+<img src="img/light2.jpg" width="100%" height="100%" align="right"/>
+<img src="img/light3.png" width="100%" height="100%" align="right"/>
+<!--[if !IE]><script>fixScale(document);</script><![endif]-->
 </body>
 </html>
+
+    Status
+    API
+    Training
+    Shop
+    Blog
+    About
+
+    © 2015 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Contact
+
 
